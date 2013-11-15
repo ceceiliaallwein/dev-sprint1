@@ -1,3 +1,52 @@
+Answers from Dev-sprint1
+Name: Ceceilia Allwein 
+
+
+
+QUESTION: What is a route, and how do you specify one in Flask? 
+ANSWER: A route binds a function to a URL, so that when you call the URL (incl. the port) in the browser, it runs the app that you previously executed to run on that particular port.  
+
+
+QUESTION: What is the only route we've specified in our appication? 
+ANSWER: Testingflast.py only has the main page defined ('/'), thus when you go to http://127.0.0.1:5000/ it runs the function hello.
+
+
+QUESTION: What is the method that gets called when we hit that route? 
+ANSWER: It calls the __main__ method. 
+
+
+QUESTION: If I wanted to add a route at "/world" that printed "Hello, World" on the screen, what would that code look like? 
+# ANSWER: That code would like: 
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello Internet!"
+
+@app.route('/world')
+def world():
+	return "Hello, World"
+
+if __name__ == "__main__":
+    app.run()
+
+
+QUESTION: If I create a new application and import testingflask.py (a.k.a. I am not running it directly), will code under the 'if __name__ == "__main__":' be executed? Why not?  
+ANSWER: If there's a name check (__name__ == "__main__") the code (app.run()) only executes when you run the module as a program--and not when it's imported as a module. If it's imported, then you have to call the functions themselves. This means that I can run the program above at http://127.0.0.1:5002/world, but if it's imported, "Hello, World" won't display. I'd have to add another line actually calling the fucntion app.run(). This is because python automatically sets up a set of variables when you run a script. The name check is one of these. 
+
+
 *** Cut and paste the for loop here ***
 
+
+					{% for message in messages %}
+{{message}}
+					{% endfor %}
+				</pre>
+				{% endif %}
+			{% endwith %}
+
+
 *** What is the for loop doing? ***
+
